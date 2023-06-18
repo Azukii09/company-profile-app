@@ -16,14 +16,14 @@ const closeModal = () => {
     confirmingUserDeletion.value = false;
 };
 const props = defineProps({
-    tags: Object,
+    categories: Object,
 });
 </script>
 <template>
     <Head title="CMS" />
 
     <AuthenticatedLayout>
-        <template #header> Tags </template>
+        <template #header> Category </template>
 
         <div class="p-4 bg-white rounded-lg shadow-xs">
             <div
@@ -46,22 +46,22 @@ const props = defineProps({
                             <tr
                                 class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b"
                             >
-                                <th class="px-4 py-3">Tag</th>
+                                <th class="px-4 py-3">Category</th>
                                 <th class="px-4 py-3">Description</th>
                                 <th class="px-4 py-3">Action</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y">
                             <tr
-                                v-for="tag in tags.data"
-                                :key="tag.id"
+                                v-for="category in categories.data"
+                                :key="category.id"
                                 class="text-gray-700"
                             >
                                 <td class="px-4 py-3 text-sm">
-                                    {{ tag.tag_name }}
+                                    {{ category.category_name }}
                                 </td>
                                 <td class="px-4 py-3 text-sm">
-                                    {{ tag.tag_desc }}
+                                    {{ category.category_desc }}
                                 </td>
                                 <td px-4 py-3>
                                     <PrimaryButton
@@ -112,7 +112,7 @@ const props = defineProps({
                 <div
                     class="px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase bg-gray-50 border-t sm:grid-cols-9"
                 >
-                    <pagination :links="tags.links" />
+                    <pagination :links="categories.links" />
                 </div>
             </div>
         </div>

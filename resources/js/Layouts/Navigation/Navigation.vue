@@ -492,7 +492,12 @@ let showingCMS = ref(false);
                                         </g>
                                     </g>
                                 </svg>
-                                <span> Categories </span>
+                                <Link
+                                    class="ml-2"
+                                    :href="route('categories.index')"
+                                >
+                                    Categories
+                                </Link>
                             </span>
                         </li>
                     </ul>

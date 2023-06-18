@@ -3,19 +3,19 @@
 namespace App\Http\Controllers\CMS;
 
 use App\Http\Controllers\Controller;
-use App\Models\CMS\Tag;
+use App\Models\CMS\Category;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class TagController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return Inertia::render('CMS/Tags/Index', [
-            'tags' => Tag::paginate(5),
+        return Inertia::render('CMS/Categories/Index', [
+            'categories' => Category::paginate(5),
         ]);
     }
 
@@ -40,9 +40,7 @@ class TagController extends Controller
      */
     public function show(string $id)
     {
-        return Inertia::render('CMS/Tags/Show', [
-            'chirps' => Tag::all(),
-        ]);
+        //
     }
 
     /**
